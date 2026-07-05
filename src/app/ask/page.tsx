@@ -142,7 +142,7 @@ function AskPageContent() {
   };
 
   return (
-    <div className="min-h-screen bg-[#fafafa] flex flex-col relative overflow-hidden w-full">
+    <div className="min-h-screen bg-[#fafafa] flex flex-col relative w-full">
       {/* Header */}
       <header className="flex-none h-16 border-b border-black/[0.08] bg-white/80 backdrop-blur-md px-6 flex items-center z-10 gap-4">
         <button
