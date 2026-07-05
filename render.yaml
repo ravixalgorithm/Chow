@@ -1,0 +1,32 @@
+services:
+  - name: hindsight-cognee-service
+    type: web
+    runtime: docker
+    plan: free
+    dockerfilePath: ./cognee-service/Dockerfile
+    dockerContext: .
+    envVars:
+      - key: LLM_PROVIDER
+        value: openai
+      - key: LLM_MODEL
+        value: gpt-5.4-mini
+      - key: LLM_API_KEY
+        sync: false
+      - key: EMBEDDING_PROVIDER
+        value: fastembed
+      - key: EMBEDDING_MODEL
+        value: sentence-transformers/all-MiniLM-L6-v2
+      - key: EMBEDDING_DIMENSIONS
+        value: "384"
+      - key: GRAPH_DATABASE_PROVIDER
+        value: ladybug
+      - key: VECTOR_DB_PROVIDER
+        value: lancedb
+      - key: DB_PROVIDER
+        value: sqlite
+      - key: ENABLE_BACKEND_ACCESS_CONTROL
+        value: "true"
+      - key: ONTO_API_URL
+        value: https://api.buildonto.dev
+      - key: ONTO_API_KEY
+        sync: false
